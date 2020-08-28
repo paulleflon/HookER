@@ -56,6 +56,12 @@ client.on("message", msg => {
 client.on("ready", async () => {
 	log("Bot connected as " + client.user.tag);
 	log("Loading webhooks frome save file...");
+	client.user.setPresence({
+		activity: {
+			name: "&help",
+			type: "LISTENING"
+		},
+	});
 	try {
 		_save = require("./webhooks.json");
 	} catch {
@@ -63,8 +69,15 @@ client.on("ready", async () => {
 		save();
 	}
 	for (const g in _save) {
-		const guild = await client.guilds.fetch(g);
-		if (!guild) {
+		var guild;
+		try {
+		guild = await client.guilds.fetch(g);
+		} catch (err) {
+			log("Guild " + g + " is unaivalable. Deleted.");
+			delete _save[g];
+			break;
+		}
+		if (!guild || !guild.available) {
 			delete _save[g];
 			break;
 		}
@@ -181,6 +194,11 @@ hookCommands.set("say", say);
 
 async function list(msg, args) {
 	const g = msg.guild.id;
+	if (!webhooks[g]) {
+		webhooks[g] = {};
+		_save[g] = {};
+		save();
+	}
 	var embed = new Discord.MessageEmbed({
 		author: {
 			iconURL: msg.guild.iconURL({ dynamic: true }),
