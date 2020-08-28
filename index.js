@@ -117,11 +117,11 @@ async function createWebhook(msg, args) {
 	}
 	const id = args[0] && args.shift().toLowerCase();
 	if (!id) {
-		reject(msg.channel, "Please specify an id for the webhook");
+		reject(msg.channel, "Please specify an ID for the webhook");
 		return;
 	}
 	if (Object.keys(webhooks[g]).includes(id)) {
-		reject(msg.channel, "This id is already used in this guild.");
+		reject(msg.channel, "This ID is already used in this guild.");
 		return;
 	}
 	var avatar;
@@ -354,7 +354,7 @@ async function deleteHook(msg, args) {
 	save();
 	msg.channel.send(new Discord.MessageEmbed({
 		color: "GREEN",
-		description: "Succesfully deleeted webhook `" + id + "`",
+		description: "Succesfully deleted webhook `" + id + "`",
 		timestamp: Date.now()
 	}));
 	log("Webhook deleted in " + msg.guild.name + " (" + msg.guild.id + ") : " + id);
