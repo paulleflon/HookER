@@ -96,7 +96,12 @@ client.on("ready", async () => {
 	save();
 	log("Bot ready");
 });
-
+client.on("guildCreate", guild => {
+	log("Joined guild " + guild.name + " (" + guild.id + ")");
+});
+client.on("guildDelete", guild => {
+	log("Left guild " + guild.name + " (" + guild.id + ")");
+});
 async function createWebhook(msg, args) {
 	const g = msg.guild.id;
 	if (!webhooks[g]) {
