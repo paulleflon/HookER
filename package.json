@@ -1,0 +1,21 @@
+{
+  "name": "hooker",
+  "version": "1.0.0",
+  "description": "A simple Discord bo to mess with webhooks",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index"
+  },
+  "keywords": [
+    "webhooks",
+    "discord",
+    "bot",
+    "discord.js"
+  ],
+  "author": "Hicka",
+  "license": "MIT"
+}
