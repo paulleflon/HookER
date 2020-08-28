@@ -365,7 +365,8 @@ async function help(msg, args) {
 	const embed = new Discord.MessageEmbed({
 		author: {
 			name: "HookER",
-			iconURL: client.user.avatarURL()
+			iconURL: client.user.avatarURL(),
+			url: "https://github.com/Hickacou/HookER"
 		},
 		title: "HookER commands help",
 		description: "HookER's prefix : **`" + prefix + "`**"
