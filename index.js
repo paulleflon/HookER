@@ -285,6 +285,7 @@ async function changeChannel(msg, args) {
 			return;
 		}
 		reject(msg.channel, "An error occured\n`" + err.message + "`");
+		return;
 	}
 	msg.channel.send(new Discord.MessageEmbed({
 		color: "GREEN",
