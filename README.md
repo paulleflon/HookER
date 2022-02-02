@@ -6,4 +6,4 @@ This bot was made in a day out of boredom. That explains the crappy code, the po
 
 For any issues with the bot, just DM me on Discord : **Hicka#3151**
 
-Follow me on Twitter too if you want lol : [@puddingmangue](https://twitter.com/puddingmangue)
+Follow me on Twitter too if you want lol : [@hickatheworld](https://twitter.com/hickatheworld)
